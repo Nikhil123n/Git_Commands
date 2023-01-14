@@ -1,0 +1,41 @@
+$ git init
+
+
+for Staging Changes
+for all
+$ git add .
+for particular
+$ git add name_of_file
+
+
+for commit to local repository
+for all 
+$ git commit -a -m "message ieipe  i"
+for particular 
+$ git commit "name of dkjd  file"
+----> outpus such this 
+    [master (root-commit) 2d4f27f] testing git functionalities
+    1 file changed, 0 insertions(+), 0 deletions(-)
+    create mode 100644 .readme
+
+# Note above commit is to master which is a local repository branch means our computer
+
+
+Remote  - like pipeline  - which connects our local repository to global repository
+
+to add remote 
+$ git remote add origin https://github.com/Nikhil123n/Mask_RCNN.git
+the remote is now as named 
+"orgin" as global repository and
+"master" as local repository
+
+
+last step is to push the commits
+$ git push remote_name which_branch
+$ git push origin master
+
+
+
+to change the branch 
+git checkout "name of another branch if it has"
+$ git checkout new_story
