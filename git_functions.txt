@@ -91,3 +91,31 @@ $ git stash clear
 To create a branch from the stash container
 With use of stash to create branch on local computer
 $ git stash branch "name_of_new_branch" stash@{2}
+
+
+
+To Rename the name of the branch - local 
+$ git branch -m old-name new-name
+
+To verify we are in which branch
+$ git branch -a
+Output:::
+    * master
+    remotes/origin/master
+Here the '*' astrik indicates our current branch
+
+
+Rename a Remote Git Branch
+- Verify the local branch has the correct name:
+$ git branch -a
+- Next, delete the branch with the old name on the remote repository:
+$ git push origin --delete old-name
+- The output confirms that the branch was deleted.
+- System confirms old git branch was deleted
+- Finally, push the branch with the correct name, and reset the upstream branch:
+$ git push origin -u new-name
+- Alternatively, you can overwrite the remote branch with a single command:
+$ git push origin :old-name new-name
+- Resetting the upstream branch is still required:
+$ git push origin -u new-name
+
