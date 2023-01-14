@@ -1,3 +1,5 @@
+init / add / commit / push
+
 $ git init
 
 
@@ -24,10 +26,11 @@ $ git commit "name of dkjd  file"
 Remote  - like pipeline  - which connects our local repository to global repository
 
 to add remote 
+git remote add "temp_name_for_our_remote_repository_on_github" link_to_repo
 $ git remote add origin https://github.com/Nikhil123n/Mask_RCNN.git
 the remote is now as named 
 "orgin" as global repository and
-"master" as local repository
+"master" as local repository - branch
 
 
 last step is to push the commits
@@ -39,3 +42,52 @@ $ git push origin master
 to change the branch 
 git checkout "name of another branch if it has"
 $ git checkout new_story
+
+
+Pull all the new changes on github repository
+$ git pull
+$ git pull origin master 
+origin - remote - global repository on github - link 
+master - branch - local repository
+
+To List out all the remote github repository initiated
+$ git remote -v
+origin  https://github.com/Nikhil123n/Mask_RCNN.git (fetch)
+origin  https://github.com/Nikhil123n/Mask_RCNN.git (push)
+
+
+To remove the remote repository
+$ git remote remove origin
+will remove the origin remote
+
+
+When we had made changes to our code and which we dont want to commit or staged
+we can make use of git stash
+it's like a container - that stores the stashed files which we are not willing to commit now but we might need later so to store as stashs
+Below line will stash all the changes (unstaged changes) and gives a random name to that stash container
+$ git stash 
+Below line will stash changes in container that as our name "hsuhf fu"
+$ git stash -m "hsuhf fu"
+
+To list out all how much elements, files we had stashed
+$ git stash list
+
+to apply changes to previously latest stashed 
+$ git stash apply
+
+to stash a particular stash container
+$ git stash apply stash@{2}
+
+to delete latest stashec container
+$ git stash pop
+to delete particular stash
+$ git stash drop stash@{2}
+
+
+To clear all the stash container
+$ git stash clear
+
+
+To create a branch from the stash container
+With use of stash to create branch on local computer
+$ git stash branch "name_of_new_branch" stash@{2}
